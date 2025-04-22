@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "1",
+        "Name": "Module 1",
+        "type": "stepper",
+        "min-speed": "1",
+        "max-speed": "10"
+    },
+    {
+        "ID": "2",
+        "Name": "Module 2",
+        "type": "light",
+        "min-speed": "1",
+        "max-speed": "10"
+    }
+]

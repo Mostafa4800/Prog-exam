@@ -1,0 +1,37 @@
+.panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Instead of auto, use a fixed or max value */
+    grid-auto-rows: minmax(300px, 1fr);
+    text-align: center;
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
+.panel > * {
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.panel > *:nth-child(odd) {
+    background-color: #e0e0e0;
+}
+.panel > *:nth-child(even) {
+    background-color: #d0d0d0;
+}
+/* Ensure all child elements are centered and fill the row height */
+
+
+.panel > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    height: 100%; /* only works if parent row height is set */
+    box-sizing: border-box;
+    padding: 1rem; /* Optional, for spacing */
+}
+
+
