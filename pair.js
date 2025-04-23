@@ -63,8 +63,8 @@ document.getElementById("pair").addEventListener("click", async function() {
                     window.db.collection("modules").where("id", "==", moduleData.id).get().then((querySnapshot) => {
                         if (!querySnapshot.empty) {
                             console.log('Module ID already exists in Firestore:', moduleData.id);
-                            alert('Module ID already exists. Please try again.');
-                            return;
+                            alert('Module ID already exists. Pairing skipped.');
+                            return; // Exit if the module already exists
                         }
 
                         // Add the response to Firestore
