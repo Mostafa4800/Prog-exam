@@ -7,46 +7,48 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <script src="firebaseInit.js"></script>
 </head>
 <body>
-    <div id="header"><h2>Administrative Control Panel</h2></div>
-
+    <div id="header" class="header"><h2>Administrative Control Panel</h2></div>
     <div class="panel" id="panel">
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
-
-    <div><button id="logout-button">Logout</button></div>
-
-    <script type="module" src="firebaseInit.js"></script>
+    <div id="footer" class="footer">    
+        <div><button id="logout-button">Logout</button></div>
+        <div><button id="pair">Pair new devices</button></div>
+    </div>
+    
     <script src="loginChecker.js"></script>
     <script type="module" src="mqtt-protocol.js"></script>
     <script type="module" src="motorLogic.js"></script>
+    <script src="pair.js" type="module"></script>
+    <script type="module" src="moduleLoad.js"></script>
     <script src="script.js" defer></script>
 </body>
 </html>

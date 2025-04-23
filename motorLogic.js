@@ -40,11 +40,43 @@ function speed(Speed, DeviceId, Direction) {
         console.error('Message cannot be empty');
     }
 }
+
+function stopMotor(DeviceId) {
+    const deviceId = String(DeviceId).trim();
+
+    if (!client || !client.connected) {
+        console.error('MQTT client is not connected');
+        return;
+    }
+
+    if (!deviceId || deviceId.trim() === '') {
+        console.error('Invalid device ID');
+        return;
+    }
+
+    const message = JSON.stringify({
+        Steps: "Stop",
+        Speed: "0",
+        Dir: "0",
+        MicroSteps: 256
+    });
+
+    if (message) {
+        client.publish("ESPStepper" + deviceId + "/Motor", message, () => {
+            console.log(`Message published: ${message}`);
+        });
+    } else {
+        console.error('Message cannot be empty');
+    }
+}
+
+
+window.stopMotor = stopMotor;
 window.speed = speed;
 // Wait for MQTT to be ready before calling the speed function
 mqttReady
     .then(() => {
-        console.log('MQTT is ready. Running speed function...');
+        console.log('MQTT is ready.');
 
     })
     .catch((err) => {

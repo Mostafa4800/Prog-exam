@@ -9,7 +9,14 @@
     {
         "ID": "2",
         "Name": "Module 2",
-        "type": "light",
+        "type": "lightStrip",
+        "min-speed": "1",
+        "max-speed": "10"
+    },
+    {
+        "ID": "3",
+        "Name": "Hue light 1",
+        "type": "hue",
         "min-speed": "1",
         "max-speed": "10"
     }
