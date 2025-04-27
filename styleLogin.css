@@ -1,0 +1,124 @@
+/* General body styling */
+body {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    background: radial-gradient(circle, #000000, #000010); /* Deep black space-like gradient */
+    background-image: url('./stars.jpg'); /* Subtle starry texture */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    overflow: hidden;
+    animation: starry 100s linear infinite; /* Subtle starry animation */
+}
+
+/* Centered container for the login form */
+.container {
+    background: rgba(0, 0, 0, 0.8); /* Darker transparent glass-like effect */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2), 0 4px 6px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: #ffffff;
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+}
+
+/* Page title styling */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #ffffff;
+    text-shadow: 0 0 30px #6a11cb, 0 0 60px #2575fc; /* Stronger glowing effect */
+}
+
+/* Form labels */
+.container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+/* Input fields */
+.container input[type="text"],
+.container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #6a11cb;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.6); /* Darker input background */
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+/* Input focus effect */
+.container input:focus {
+    border-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 20px rgba(106, 17, 203, 0.8), 0 0 40px rgba(37, 117, 252, 0.8);
+}
+
+/* Login button */
+.container button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px #6a11cb, 0 0 40px #2575fc;
+}
+
+/* Button hover effect */
+.container button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    box-shadow: 0 0 30px #ffffff, 0 0 50px #6a11cb;
+}
+
+/* Error and success messages */
+.error-message,
+.success-message {
+    margin-top: 15px;
+    font-size: 14px;
+    display: none;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+.error-message {
+    color: #ff4d4d;
+}
+
+.success-message {
+    color: #4caf50;
+}
+
+/* Add a subtle animation to the background */
+@keyframes starry {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 2000px 2000px;
+    }
+}
+
+body {
+    animation: starry 100s linear infinite;
+}
