@@ -10,7 +10,7 @@ body {
     align-items: center;
     color: #ffffff;
     overflow: hidden;
-    animation: starry 100s linear infinite; /* Subtle starry animation */
+    animation: starry 10s linear infinite; /* Subtle starry animation */
 }
 
 /* Centered container for the login form */
@@ -119,6 +119,3 @@ h2 {
     }
 }
 
-body {
-    animation: starry 100s linear infinite;
-}
