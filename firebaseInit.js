@@ -10,12 +10,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+export const app = firebase.initializeApp(firebaseConfig);
+export const db = firebase.firestore();
 
-// Attach `db` to the global `window` object
-window.db = db;
-// Attach Firebase to the global `window` object
-window.firebase = firebase;
-// Attach the Firebase app to the global `window` object
-window.firebaseApp = app;
+

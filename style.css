@@ -17,7 +17,6 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    animation: starry 10s linear infinite;
 }
 
 /* Header styling */
@@ -93,10 +92,7 @@ button:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.module:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px var(--primary-color), 0 0 50px var(--secondary-color);
-}
+
 
 /* Center buttons inside modules */
 .module button {
@@ -151,12 +147,3 @@ button:hover {
     text-shadow: 0 0 5px var(--white);
 }
 
-/* Add a subtle animation to the background */
-@keyframes starry {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 2000px 2000px;
-    }
-}

@@ -1,6 +1,7 @@
 // Pairing modules by sending a request to pairing/server and subscribing to pairing/client
 
 import { client, mqttReady } from './Mqtt-protocol.js'; // Import MQTT client and promise
+import { loadModules } from './moduleLoad.js'; // Import the loadModules function
 
 let isMessageListenerAdded = false; // Flag to ensure the message listener is added only once
 
@@ -45,6 +46,7 @@ document.getElementById("pair").addEventListener("click", async function() {
                         }
 
                         // Replace unquoted property names with quoted ones
+                        // https://stackoverflow.com/questions/44562635/regular-expression-add-double-quotes-around-values-and-keys-in-javascript
                         rawMessage = rawMessage.replace(/([a-zA-Z0-9_]+):/g, '"$1":'); // Quote property names
                         rawMessage = rawMessage.replace(/: ([a-zA-Z0-9_/]+)/g, ': "$1"'); // Quote string values
 

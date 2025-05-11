@@ -1,6 +1,6 @@
-import { client, mqttReady } from './Mqtt-protocol.js'; // Import the client and the promise
+import { client } from './Mqtt-protocol.js'; // Import the client and the promise
 
-function speed(Speed, DeviceId, Direction) {
+export function speed(Speed, DeviceId, Direction) {
     const deviceId = String(DeviceId).trim();
     const speed = String(Speed).trim();
     const Dir = String(Direction).trim();
@@ -41,7 +41,7 @@ function speed(Speed, DeviceId, Direction) {
     }
 }
 
-function stopMotor(DeviceId) {
+export function stopMotor(DeviceId) {
     const deviceId = String(DeviceId).trim();
 
     if (!client || !client.connected) {
@@ -71,14 +71,3 @@ function stopMotor(DeviceId) {
 }
 
 
-window.stopMotor = stopMotor;
-window.speed = speed;
-// Wait for MQTT to be ready before calling the speed function
-mqttReady
-    .then(() => {
-        console.log('MQTT is ready.');
-
-    })
-    .catch((err) => {
-        console.error('Failed to initialize MQTT:', err);
-    });

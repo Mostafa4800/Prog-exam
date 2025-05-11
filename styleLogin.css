@@ -92,22 +92,7 @@ h2 {
     box-shadow: 0 0 30px #ffffff, 0 0 50px #6a11cb;
 }
 
-/* Error and success messages */
-.error-message,
-.success-message {
-    margin-top: 15px;
-    font-size: 14px;
-    display: none;
-    text-shadow: 0 0 10px #ffffff;
-}
 
-.error-message {
-    color: #ff4d4d;
-}
-
-.success-message {
-    color: #4caf50;
-}
 
 /* Add a subtle animation to the background */
 @keyframes starry {

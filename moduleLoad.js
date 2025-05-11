@@ -1,8 +1,10 @@
 // Reference to the Firestore database
-const db = window.db;
+import { db } from "./firebaseInit.js"; // Import the Firestore database instance
+import { speed, stopMotor } from "./motorLogic.js"; // Import the motor control functions
+
 
 // Function to load and display all modules
-async function loadModules() {
+export async function loadModules() {
     try {
         // Get a reference to the container where modules will be displayed
         const panel = document.getElementById("panel");
@@ -52,23 +54,24 @@ async function loadModules() {
             const directionSelect = document.getElementById(`direction-${moduleData.id}`);
             const stopButton = document.getElementById(`stop-${moduleData.id}`);
 
+            
             // Slider input event listener for dynamic speed adjustment
             speedSlider.addEventListener("input", () => {
-                const speed = speedSlider.value;
+                const selectedSpeed = speedSlider.value; // Ændret variabelnavn
                 const direction = directionSelect.value;
-                window.speed(speed, moduleData.id, direction); // Call the speed function dynamically
+                speed(selectedSpeed, moduleData.id, direction); // Kald funktionen 'speed'
             });
 
             // Direction change event listener for immediate direction switching
             directionSelect.addEventListener("change", () => {
-                const speed = speedSlider.value;
+                const selectedSpeed = speedSlider.value; // Ændret variabelnavn
                 const direction = directionSelect.value;
-                window.speed(speed, moduleData.id, direction); // Call the speed function dynamically
+                speed(selectedSpeed, moduleData.id, direction); // Kald funktionen 'speed'
             });
 
             // Stop button event listener
             stopButton.addEventListener("click", () => {
-                window.stopMotor(moduleData.id);
+                stopMotor(moduleData.id);
             });
         });
     } catch (error) {
@@ -77,7 +80,7 @@ async function loadModules() {
     }
 }
 
-window.loadModules = loadModules; // Attach the function to the global window object
+
 
 // Call the function to load modules when the page loads
 document.addEventListener("DOMContentLoaded", loadModules);
